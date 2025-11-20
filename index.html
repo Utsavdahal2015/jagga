@@ -3,43 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <title>Document</title>
 </head>
 <style>
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body{
+        margin: 10px;
+        background-color: #FFDFB9;
+    }
+
     .container{
-        padding: 20px;
+        padding: 0px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .box1{
-        background-color: rgb(255, 255, 255);
-    }
-    
-    h1{
-        color: rgb(228, 19, 19);
+        background-color: #ffffff;
+        width: 95%;
+        max-width: 800px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;  /* horizontal center */
+        align-items: center;      /* vertical center */
+        border-radius: 10px;
+        box-shadow: #24000a 0px 0px 10px;
+        margin-bottom: 20px;
     }
 
     img{
-        width: 100%;    
+        width: 95%;
     }
+
+    
+    .blink{
+        color: #A4193D;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-family: "Poppins";
+        font-weight: 900;
+        font-size: 35px;
+    }
+
+    
+
+    .blink {
+    animation: blinkAnimation 1s steps(3, start) 3;
+    }
+
+    @keyframes blinkAnimation {
+        to {
+        visibility: hidden;
+        }
+    }
+
+    .detail{
+        max-width: 800px;
+        font-family: "Poppins";
+        font-weight: 500;
+        font-size: 17px;
+        color: #24000a;
+        text-align: center;
+        margin: 10px 20px 0px 20px;
+    }
+
+   .pricelist{
+        font-family: "Poppins";
+        font-weight: 500;
+        font-size: 18px;
+        color: #24000a;
+        text-align: center;
+        margin-top: 80px;
+        margin-bottom: 10px;
+    }
+
+
+
+
+
+
+
+
+    .plot-table-container {
+        width: 95%;
+        max-width: 800px;
+        margin: 20px auto;
+        overflow-x: auto; /* for small screens */
+    }
+
+    .plot-table {
+        width: 98%;
+        max-width: 600px;
+        border-collapse: collapse;
+        font-family: "Poppins";
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .plot-table th, .plot-table td {
+        padding: 8px;
+        border: 1px solid #A4193D;
+    }
+
+    .plot-table th {
+        background: linear-gradient(135deg, #A4193D, #D01F50);
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .plot-table td {
+        font-weight: 500;
+        font-size: 15px;
+        color: #24000a;
+    }
+
+    .plot-table tr:nth-child(even) td {
+        background-color: #FFE8D6; /* light shade for alternate rows */
+    }
+
+
+
+    .contact{
+        border: 2px solid #A4193D; 
+        color: #A4193D; 
+        padding: 5px 50px; 
+        border-radius: 5px; 
+        font-size: 15px; 
+        font-family: "Poppins"; 
+        font-weight: 600; 
+        cursor: pointer; 
+    }
+
+    .map{
+        font-family: "Poppins";
+        font-weight: 500;
+        font-size: 18px;
+        color: #A4193D;
+        text-align: center;
+        margin: 10px 20px 10px 20px;
+    }
+
+    .plot-price{
+        background: linear-gradient(135deg, #A4193D, #D01F50);
+        color: white;
+        border: none;
+        padding: 10px 50px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        font-family: "Poppins";
+        font-weight: 600;
+        margin: 10px;
+    }
+
+    
+    .plot-price:hover{
+        background-color: #A4193D;
+        color: white;   
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+        transform: scale(1.04); /* Slight zoom effect */
+    }
+
+    a {
+    text-decoration: underline; /* adds double underline */
+    text-decoration-color: #A4193D; /* makes the underline red */
+    }
+
+
+
+
+
+
+/* Title */
+.call-title {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 18px;
+    color: #A4193D;
+    margin-bottom: 4px;
+}
+
+/* Phone buttons */
+.call-btn {
+    border: 3px solid #A4193D;
+    color: #A4193D;
+    padding: 5px 50px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: "Poppins";
+    font-weight: 600;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.call-btn:hover {
+    transform: scale(1.04);
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+    padding: 10px 50px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: "Poppins";
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+    display: inline-flex;    
+    align-items: center;     
+    gap: 8px;             
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.04);
+}
+
+.wa-icon {
+    width: 25px;
+    height: 25px;
+    display: block;
+}
+
 </style>
-<body bgcolor="#f8ffd0">
-    <div class="container">
-        <h1>जग्गा बिक्रीमा</h1>
+<body>
 
-<div class="box1">
-    <img src="https://utsavdahal2015.github.io/jagga/pngplot.png?v=4" alt="तस्बिर">
-</div>
+    <p class="blink">जग्गा बिक्रीमा</p>
+    <div class="container"> 
 
-        <!-- <img src="plot.jpg" alt="तस्बिर"> -->
+        <div class="box1">
+            <img src="pngplot.png" alt="तस्बिर">
+        </div>
 
-        हजुरहरुलाई झपाली बन्ने सुबर्ण अवसरका साथ किफाइती दाममा छानी छानी जग्गा उपलब्ध रहेको जानकारी गराइन्छ । 
-<h1>Durga Prasad Subedi</h1>
+        
+        
+        <a href = "https://www.google.com/maps/place/26%C2%B034'47.1%22N+88%C2%B000'44.6%22E/@26.579737,88.012378,504m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d26.579737!4d88.012378?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D" target="_blank"><p class="map">Google Map Location</p></a>
+        
+        <a href="#down" class="plot-price">प्लट मूल्यसूची हेर्नुहोस्</a>
+        
+        <!-- <p class="detail">झपाको मुटु बिर्तामोड (गरामनीदेखि तल) रहेका यी १४ वटा प्लट हरु किफाइती दाममा छानी छानी उपलब्ध रहेको जानकारी गराउँदै  ।</p> -->
 
-    </div>
+        <p class="detail">बिर्तामोडको भीडभाडबाट टाढा (गरामनीदेखि तल) सुन्दर गाउँमा अवस्थित, आवस्यक सुबिधाले भरिपूर्ण यी १४ वटा प्लटहरु किफाइती दाममा छानी छानी उपलब्ध रहेको जानकारीका साथ लगानीप्रेमी/परिवारप्रेमी महानुभावक्हरुमा यी घडेरी प्रस्तुत गर्दछौ । </p>
+        
+        <p class="call-title">आजै सम्पर्क गर्नुहोस्:</p>
 
+        <a href="tel:9842694555" class="call-btn">📞 9824035182</a>
+        <a href="tel:9815064555" class="call-btn">📞 9862667788</a>
+        <a href="https://wa.me/+9779824035182" class="whatsapp-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="wa-icon">9824035182</a>
+
+     
+        <p class="pricelist" id="down">
+            जग्गाको मूल्य सूची यस प्रकार रहेको छ :
+        </p>
+
+        <table class="plot-table">
+        <thead>
+            <tr>
+                <th>Plot No</th>
+                <th>Plot Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Rs. 15,00,000</td></tr>
+            <tr><td>2</td><td>Rs. 14,50,000</td></tr>
+            <tr><td>3</td><td>Rs. 16,00,000</td></tr>
+            <tr><td>4</td><td>Rs. 15,50,000</td></tr>
+            <tr><td>5</td><td>Rs. 14,80,000</td></tr>
+            <tr><td>6</td><td>Rs. 15,20,000</td></tr>
+            <tr><td>7</td><td>Rs. 16,10,000</td></tr>
+            <tr><td>8</td><td>Rs. 15,40,000</td></tr>
+            <tr><td>9</td><td>Rs. 15,90,000</td></tr>
+            <tr><td>10</td><td>Rs. 14,90,000</td></tr>
+            <tr><td>11</td><td>Rs. 15,30,000</td></tr>
+            <tr><td>12</td><td>Rs. 15,70,000</td></tr>
+            <tr><td>13</td><td>Rs. 16,20,000</td></tr>
+            <tr><td>14</td><td>Rs. 14,95,000</td></tr>
+            <tr><td>15</td><td>Rs. 15,60,000</td></tr>
+            <tr><td>16</td><td>Rs. 15,10,000</td></tr>
+            <tr><td>17</td><td>Rs. 15,80,000</td></tr>
+            <tr><td>18</td><td>Rs. 16,00,000</td></tr>
+        </tbody>
+    </table>
 
 
     

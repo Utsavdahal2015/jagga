@@ -238,6 +238,163 @@
     text-decoration: none;
 }
 
+.blur {
+    filter: blur(5px);
+    user-select: none;
+}
+
+
+/* Sticky Floating Button (hidden by default) */
+.sticky-btn {
+    position: fixed;
+    height: 60px;
+    width: 300px;
+    bottom: 20px;
+    background: linear-gradient(135deg, #c5163a, #e3204e);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    display: block;   /* hidden initially */
+    transform: translateX(-50%);
+    left: 50%
+}
+
+.sticky-btn:hover {
+    transform: scale(1.03);
+}
+
+
+
+
+
+
+
+
+
+/* Popup Overlay (dark transparent background) */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none; /* hidden initially */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Popup Box */
+.popup-box {
+    background: #ffffff;
+    position: absolute; /* instead of static flex centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 350px;
+    width: 80%;
+    max-width: 350px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+/* Popup Title */
+.popup-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #c5163a;
+    margin-bottom: 10px;
+}
+
+/* Popup Text */
+.popup-text {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Input Box */
+.popup-input {
+    width: 90%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 2px solid #c5163a;
+    outline: none;
+}
+
+/* Submit Button */
+.popup-submit {
+    margin-top: 15px;
+    background: linear-gradient(135deg, #c5163a, #e3204e);
+    color: white;
+    border: none;
+    padding: 10px 50px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* Small circular close button */
+.popup-close {
+    position: absolute;
+    width: 30px;
+    margin-left: 295px;
+    height: 30px;
+    border: 1px solid #c5163a;
+    border-radius: 50%;
+    color: #c5163a;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-color: transparent; 
+    transition: 0.2s;
+}
+
+.popup-close:hover {
+    transform: scale(1.2);
+}
+
+
+.price {
+    transition: filter 2s ease-in-out; /* smooth unblur over 1.5s */
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+
+.price-glory {
+    animation: gloryAnimation 1s ease forwards;
+}
+
+@keyframes gloryAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        /* transform: scale(1.1); */
+        color: #960c0c;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
 </style>
 <body>
 
@@ -245,7 +402,7 @@
     <div class="container"> 
 
         <div class="box1">
-            <img src="https://utsavdahal2015.github.io/jagga/pngplot.png?v=2" alt="तस्बिर">
+            <img src="https://utsavdahal2015.github.io/jagga/pngplot.png?v=3" alt="तस्बिर">
         </div>
 
         
@@ -254,6 +411,8 @@
         
         <a href="#down" class="plot-price">घडेरी मूल्य सूची हेर्नुहोस्</a>
         
+        <!-- <p class="detail">झपाको मुटु बिर्तामोड (गरामनीदेखि तल) रहेका यी १४ वटा प्लट हरु किफाइती दाममा छानी छानी उपलब्ध रहेको जानकारी गराउँदै  ।</p> -->
+
         <p class="detail">बिर्तामोडको भीडभाडबाट टाढा, सदरमुकाम नजिक, सुन्दर गाउँमा अवस्थित, आवस्यक सुबिधाले भरिपूर्ण यी १४ वटा प्लटहरु किफाइती दाममा छानी छानी उपलब्ध रहेको जानकारी गराउँदै लगानीप्रेमी/परिवारप्रेमी महानुभावहरुमा यी घडेरी प्रस्तुत गर्दछौ । </p>
         
         <p class="call-title">आजै सम्पर्क गर्नुहोस्:</p>
@@ -275,20 +434,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td>1</td><td>Rs. 10,00,000</td></tr>
-            <tr><td>2</td><td>Rs. 11,00,000</td></tr>
-            <tr><td>3</td><td>Rs. 8,40,000</td></tr>
-            <tr><td>4</td><td>Rs. 8,00,000</td></tr>
-            <tr><td>5</td><td>Rs. 7,50,000</td></tr>
-            <tr><td>6</td><td>Rs. 7,50,000</td></tr>
-            <tr><td>7</td><td>Rs. 7,50,000</td></tr>
-            <tr><td>8</td><td>Rs. 7,50,000</td></tr>
-            <tr><td>9</td><td>Rs. 6,00,000</td></tr>
-            <tr><td>10</td><td>Rs. 6,00,000</td></tr>
-            <tr><td>11</td><td>Rs. 5,00,000</td></tr>
-            <tr><td>12</td><td>Rs. 6,00,000</td></tr>
-            <tr><td>13</td><td>Rs. 6,00,000</td></tr>
-            <tr><td>14</td><td>Rs. 5,00,000</td></tr>
+            <tr><td>1</td><td class="price blur">Rs. 10,00,000</td></tr>
+            <tr><td>2</td><td class="price blur">Rs. 11,00,000</td></tr>
+            <tr><td>3</td><td class="price blur">Rs. 8,40,000</td></tr>
+            <tr><td>4</td><td class="price blur">Rs. 8,00,000</td></tr>
+            <tr><td>5</td><td class="price blur">Rs. 7,50,000</td></tr>
+            <tr><td>6</td><td class="price blur">Rs. 7,50,000</td></tr>
+            <tr><td>7</td><td class="price blur">Rs. 7,50,000</td></tr>
+            <tr><td>8</td><td class="price blur">Rs. 7,50,000</td></tr>
+            <tr><td>9</td><td class="price blur">Rs. 6,00,000</td></tr>
+            <tr><td>10</td><td class="price blur">Rs. 6,00,000</td></tr>
+            <tr><td>11</td><td class="price blur">Rs. 5,00,000</td></tr>
+            <tr><td>12</td><td class="price blur">Rs. 6,00,000</td></tr>
+            <tr><td>13</td><td class="price blur">Rs. 6,00,000</td></tr>
+            <tr><td>14</td><td class="price blur">Rs. 5,00,000</td></tr>
         </tbody>
     </table>
 
@@ -296,6 +455,267 @@
     
     </div>
 
-    <a href="https://wa.me/+9779824035182" class="footer" target="_blank">Crafted by: Utsav Dahal</footer>
+
+
+
+
+
+
+<!-- Popup Background -->
+<div id="popup-overlay" class="popup-overlay">
+    <div class="popup-box">
+        <button id="popup-close" class="popup-close">&times;</button>
+        <h3 class="popup-title">मूल्य हेर्न अघि</h3>
+        <p class="popup-text">कृपया तपाईको फोन नम्बर हाल्नुहोस् :</p>
+
+        <form id="phoneForm" action="https://script.google.com/macros/s/AKfycbw0itBdvr3XnPDeb7FWe8Z1_qezjcQ6ndyWy3E4-KP1a73BFAI9v23n0SYSe-I5atFE/exec" method="post">
+        <input name="Number" type="tel" id="phoneInput" class="popup-input" placeholder="फोन नम्बर" maxlength="10">
+        <button id="submitPhone" class="popup-submit">✔</button>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://wa.me/+9779824035182" class="footer" target="_blank">Crafted by: Utsav Dahal</a>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<script>
+const isDevMode = false;
+const priceButton = document.querySelector(".plot-price");
+const popup = document.getElementById("popup-overlay");
+const priceSection = document.getElementById("down");
+const submitButton = document.getElementById("submitPhone");
+const phoneInput = document.getElementById("phoneInput");
+const popupBox = document.querySelector(".popup-box");
+const blurredPrices = document.querySelectorAll(".price.blur"); // Select all blurred price cells
+
+// --- History API Functions for Back Button Closing ---
+
+/**
+ * Function to close the popup.
+ */
+function closePopup() {
+    popup.style.display = "none";
+}
+
+// Open popup after smooth scroll
+priceButton.addEventListener("click", e => {
+    e.preventDefault();
+    popupShownOnScroll = true;
+    priceSection.scrollIntoView({ behavior: 'smooth' });
+    
+    // Check if prices are already visible
+    if (blurredPrices.length === 0 || !blurredPrices[0].classList.contains("blur")) {
+        // If prices are already visible, don't show the popup, just scroll.
+        return; 
+    }
+
+    // Delay showing the popup to allow smooth scroll to finish
+    setTimeout(() => {
+        popup.style.display = "flex";
+        // Push a state to history so the back button can close the popup
+        history.pushState({ popupOpen: true }, '', '#price-list');
+    }, 1000);
+});
+
+// Click outside to close - uses history.back()
+popup.addEventListener("click", e => {
+    if (e.target === popup) {
+        if (history.state && history.state.popupOpen) {
+            history.back(); // Triggers popstate
+        } else {
+            closePopup();
+        }
+    }
+});
+
+// Pressing Escape key to close - uses history.back()
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape" && popup.style.display === "flex") {
+        if (history.state && history.state.popupOpen) {
+            history.back(); // Triggers popstate
+        } else {
+            closePopup();
+        }
+    }
+});
+
+
+// Back button closes popup (handles popstate event)
+window.addEventListener("popstate", (event) => {
+    // Check if we are moving away from the 'popupOpen' state
+    if (popup.style.display === "flex" && !(event.state && event.state.popupOpen)) {
+        closePopup();
+    }
+    // Ensures popup closes when back button is pressed
+    if (popup.style.display === "flex" && !event.state) {
+        closePopup();
+    }
+});
+
+
+// --- Phone Submission and Price Reveal Logic ---
+
+// Function to reveal the prices
+function revealPrices() {
+    blurredPrices.forEach(cell => {
+        cell.classList.remove("blur");
+    });
+}
+
+// Placeholder for your PHP/Database function
+function savePhoneNumberToDatabase(phoneNumber) {
+    console.log("Saving phone number:", phoneNumber);
+    // You will replace this console.log with an AJAX/Fetch request to your PHP script:
+    // fetch('save_phone.php', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({ phone: phoneNumber })
+    // })
+    // .then(response => response.json())
+    // .then(data => console.log('Success:', data))
+    // .catch((error) => console.error('Error:', error));
+}
+
+
+
+
+// 'Proceed' Button Handler
+document.getElementById("phoneForm").addEventListener("submit", function (e) {
+    const phoneNumber = phoneInput.value.trim();
+
+    if (phoneNumber.length < 10) {
+        e.preventDefault(); // Stop form submit
+        alert("कृपया मान्य फोन नम्बर प्रविष्ट गर्नुहोस्।");
+        return;
+    }
+
+    // Save the number locally
+    localStorage.setItem("userPhoneNumber", phoneNumber);
+
+    // Reveal prices
+    revealPrices();
+
+    // Close popup after 500ms
+    setTimeout(() => {
+        closePopup();
+        if (history.state && history.state.popupOpen) history.back();
+    }, 500);
+});
+
+
+
+// --- Check if user already entered number ---
+document.addEventListener("DOMContentLoaded", () => {
+    const storedNumber = localStorage.getItem("userPhoneNumber");
+
+    if (storedNumber && !isDevMode) {
+        // User already entered a number, reveal prices immediately
+        revealPrices();
+        // Optional: Hide popup in case it was triggered by scroll or click
+        popup.style.display = "none";
+    }
+});
+
+
+
+// Optional: Allow submission by pressing Enter key in the input field
+phoneInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        submitButton.click();
+    }
+});
+
+// --- AUTO POPUP ON SCROLL ---
+
+let popupShownOnScroll = false; 
+
+window.addEventListener("scroll", () => {
+    // Do NOT trigger if popup already opened once
+    if (popupShownOnScroll) return;
+
+    // Do NOT trigger if prices already visible
+    if (!blurredPrices[0].classList.contains("blur")) return;
+
+    // Scroll trigger point (you can adjust)
+    const triggerPoint = 900; // px from top
+
+    if (window.scrollY > triggerPoint) {
+        popupShownOnScroll = true;
+
+        popup.style.display = "flex";
+        history.pushState({ popupOpen: true }, "", "#popup-scroll");
+    }
+});
+
+const popupCloseButton = document.getElementById("popup-close");
+
+popupCloseButton.addEventListener("click", () => {
+    closePopup(); // this hides the popup div
+    // Optional: maintain history state consistency
+    if (history.state && history.state.popupOpen) {
+        history.back();
+    }
+});
+
+
+function revealPrices() {
+    blurredPrices.forEach(cell => {
+        cell.classList.remove("blur");  // unblur with CSS transition
+
+        // Add glorify class after a slight delay (to sync with unblur)
+        setTimeout(() => {
+            cell.classList.add("price-glory");
+        }, 1000); // matches the 1.5s unblur duration
+    });
+}
+
+
+
+phoneInput.addEventListener("focus", () => {
+    // move popup a little up when keyboard opens
+    const keyboardOffset = 50; // px offset to prevent popup being hidden
+    popupBox.style.top = `calc(50% - ${keyboardOffset}px)`;
+});
+
+phoneInput.addEventListener("blur", () => {
+    // reset popup back to exact center
+    popupBox.style.top = `50%`;
+});
+
+
+</script>
+
+
+
+
+
 </body>
 </html>

@@ -402,7 +402,7 @@
     <div class="container"> 
 
         <div class="box1">
-            <img src="https://utsavdahal2015.github.io/jagga/pngplot.png?v=3" alt="तस्बिर">
+            <img src="pngplot.png" alt="तस्बिर">
         </div>
 
         
@@ -505,7 +505,7 @@
     
 
 <script>
-const isDevMode = false;
+const isDevMode = true;
 const priceButton = document.querySelector(".plot-price");
 const popup = document.getElementById("popup-overlay");
 const priceSection = document.getElementById("down");
@@ -632,6 +632,13 @@ document.getElementById("phoneForm").addEventListener("submit", function (e) {
 
 
 
+
+// --- FIX: Prevent double-click issue on mobile (stops input blur) ---
+submitButton.addEventListener('mousedown', (e) => {
+    e.preventDefault(); // Prevents phoneInput from losing focus/keyboard from dismissing
+});
+
+
 // --- Check if user already entered number ---
 document.addEventListener("DOMContentLoaded", () => {
     const storedNumber = localStorage.getItem("userPhoneNumber");
@@ -646,12 +653,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Optional: Allow submission by pressing Enter key in the input field
-phoneInput.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        submitButton.click();
-    }
-});
+
 
 // --- AUTO POPUP ON SCROLL ---
 

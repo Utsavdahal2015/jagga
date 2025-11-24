@@ -584,7 +584,7 @@ document.getElementById("phoneForm").addEventListener("submit", function (e) {
     }
 
     // Save the number locally
-    // localStorage.setItem("userPhoneNumber", phoneNumber);
+    localStorage.setItem("userPhoneNumber", phoneNumber);
 
     // Reveal prices
     revealPrices();
@@ -593,7 +593,7 @@ document.getElementById("phoneForm").addEventListener("submit", function (e) {
     setTimeout(() => {
         closePopup();
         if (history.state && history.state.popupOpen) history.back();
-    }, 50);
+    }, 200);
 });
 
 

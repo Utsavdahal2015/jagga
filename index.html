@@ -244,31 +244,6 @@
 }
 
 
-/* Sticky Floating Button (hidden by default) */
-.sticky-btn {
-    position: fixed;
-    height: 60px;
-    width: 300px;
-    bottom: 20px;
-    background: linear-gradient(135deg, #c5163a, #e3204e);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 800;
-    cursor: pointer;
-    display: block;   /* hidden initially */
-    transform: translateX(-50%);
-    left: 50%
-}
-
-.sticky-btn:hover {
-    transform: scale(1.03);
-}
-
-
-
-
 
 
 
@@ -505,7 +480,7 @@
     
 
 <script>
-const isDevMode = false;
+const isDevMode = true;
 const priceButton = document.querySelector(".plot-price");
 const popup = document.getElementById("popup-overlay");
 const priceSection = document.getElementById("down");
@@ -540,19 +515,10 @@ priceButton.addEventListener("click", e => {
         popup.style.display = "flex";
         // Push a state to history so the back button can close the popup
         history.pushState({ popupOpen: true }, '', '#price-list');
-    }, 1000);
+    }, 1100);
 });
 
-// Click outside to close - uses history.back()
-popup.addEventListener("click", e => {
-    if (e.target === popup) {
-        if (history.state && history.state.popupOpen) {
-            history.back(); // Triggers popstate
-        } else {
-            closePopup();
-        }
-    }
-});
+
 
 // Pressing Escape key to close - uses history.back()
 document.addEventListener("keydown", function(event) {
@@ -627,7 +593,7 @@ document.getElementById("phoneForm").addEventListener("submit", function (e) {
     setTimeout(() => {
         closePopup();
         if (history.state && history.state.popupOpen) history.back();
-    }, 500);
+    }, 50);
 });
 
 
@@ -667,7 +633,7 @@ window.addEventListener("scroll", () => {
     if (!blurredPrices[0].classList.contains("blur")) return;
 
     // Scroll trigger point (you can adjust)
-    const triggerPoint = 900; // px from top
+    const triggerPoint = 650; // px from top
 
     if (window.scrollY > triggerPoint) {
         popupShownOnScroll = true;
@@ -695,7 +661,7 @@ function revealPrices() {
         // Add glorify class after a slight delay (to sync with unblur)
         setTimeout(() => {
             cell.classList.add("price-glory");
-        }, 1000); // matches the 1.5s unblur duration
+        }, 1000);
     });
 }
 

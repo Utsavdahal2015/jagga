@@ -579,28 +579,49 @@ function savePhoneNumberToDatabase(phoneNumber) {
 
 
 // 'Proceed' Button Handler
+// 'Proceed' Button Handler (FIXED to use Fetch API)
 document.getElementById("phoneForm").addEventListener("submit", function (e) {
+    // 🛑 CRITICAL FIX: PREVENT DEFAULT SUBMISSION (stops page redirect/refresh)
+    e.preventDefault(); 
+
     const phoneNumber = phoneInput.value.trim();
 
-    if (phoneNumber.length < 10) {
-        e.preventDefault(); // Stop form submit
-        alert("कृपया मान्य फोन नम्बर प्रविष्ट गर्नुहोस्।");
+    if (phoneNumber.length !== 10) {
+        alert("कृपया मान्य १० अंकको फोन नम्बर प्रविष्ट गर्नुहोस्।");
         return;
     }
 
-    // Save the number locally
+    // 1. 📡 ASYNCHRONOUS DATA SUBMISSION (Google Sheet)
+    // Send data in the background using fetch
+    fetch(e.currentTarget.action, {
+        method: "POST",
+        body: new FormData(e.currentTarget)
+    })
+    .then(response => {
+        // Data sent successfully (or error occurred, but the UI is decoupled)
+        console.log("Success: Data sent to Google Sheet in the background.");
+    })
+    .catch(error => {
+        console.error("Error sending data to Google Sheet:", error);
+    });
+    
+    // 2. 🔥 IMMEDIATE UI ACTIONS
+    // Save the number locally to prevent repeat popups
     localStorage.setItem("userPhoneNumber", phoneNumber);
 
     // Reveal prices
-    revealPrices();
+    revealPrices(); 
 
-    // Close popup after 500ms
+    // Close popup
     setTimeout(() => {
         closePopup();
         if (history.state && history.state.popupOpen) history.back();
     }, 200);
 
+    // Reset input field (optional)
+    phoneInput.value = ""; 
 
+    // ❌ REMOVED: The disruptive location.reload() has been removed.
 });
 
 

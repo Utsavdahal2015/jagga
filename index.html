@@ -322,7 +322,7 @@
 .popup-close {
     position: absolute;
     width: 30px;
-    margin-left: 295px;
+    margin-left: 270px;
     height: 30px;
     border: 1px solid #c5163a;
     border-radius: 50%;
@@ -335,6 +335,11 @@
     z-index: 1000;
     background-color: transparent; 
     transition: 0.2s;
+
+    /* 👇 ADD THESE LINES for positioning */
+    top: 20px; /* Adjust vertical position (e.g., 10px outside the box top) */
+    right: 20px; /* Adjust horizontal position (e.g., 10px outside the box right) */
+    background-color: white; /* Give it a white background so it looks clean against the corner */
 }
 
 .popup-close:hover {
